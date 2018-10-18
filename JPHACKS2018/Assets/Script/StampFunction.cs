@@ -29,6 +29,8 @@ public class StampFunction : MonoBehaviour
     //写真と動画
     void OnTapPicture()
     {
+        //カメラロールの出現
+
 
     }
 
