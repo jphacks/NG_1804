@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour {
 		Idle, WorldMapInit, Playering
 	}
 	string[] madeObjectIDs;
-	Dictionary<string, string> dicIDs;
+	public Dictionary<string, string> dicIDs = new Dictionary<string, string>();
 	public bool hasStarted = false;
 	GameState state = GameState.Idle;
 
@@ -19,14 +19,19 @@ public class GameManager : MonoBehaviour {
 
 	}
 
+	public void AddDicIDs(string anchorid, string objectid){
+		dicIDs.Add (anchorid, objectid);
+	}
+
 	// Update is called once per frame
 	void Update () {
 		switch (state) {
 		case GameState.Idle:
-			state = GameState.Playering;
+			StartCoroutine (DataLoadCoroutine ());
+			state = GameState.WorldMapInit;
 			break;
 		case GameState.WorldMapInit:
-			StartCoroutine(DataLoadCoroutine ());
+			
 			break;
 		case GameState.Playering:
 			break;

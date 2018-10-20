@@ -12,18 +12,25 @@ public class ARObjectMaker : MonoBehaviour {
 
 	public Transform AROBjectParent;
 
-	string lastID;
+	public string lastID;
+	public GameManager GM;
+	public AREventManager AREM;
 
 	void Start(){
 		MakeARObject ("stamp:cat");
 	}
 
+	//makeARObject with anchor
 	public void MakeARObject(string id){
-		Vector3 makepos = Camera.main.transform.position;
-		Quaternion makerot = Camera.main.transform.rotation;
-		GameObject madeObject = MakeObjectFromID (id, makepos, makerot);
-		UnityARSessionNativeInterface.GetARSessionNativeInterface ().AddUserAnchorFromGameObject (madeObject);
-		lastID = id;
+		if (GM.hasStarted) {
+			Vector3 makepos = Camera.main.transform.position;
+			Quaternion makerot = Camera.main.transform.rotation;
+			GameObject madeObject = MakeObjectFromID (id, makepos, makerot);
+			UnityARSessionNativeInterface.GetARSessionNativeInterface ().AddUserAnchorFromGameObject (madeObject);
+			lastID = id;
+			Debug.Log ("GameObject is Made with Anchor");
+
+		}
 	}
 
 	public GameObject MakeObjectFromID(string id, Vector3 pos, Quaternion rot){
@@ -40,7 +47,6 @@ public class ARObjectMaker : MonoBehaviour {
 			switch (spid) {
 			case "cat":
 				madeObject = Instantiate (StampPrefab[0], pos, rot, AROBjectParent);
-				return StampPrefab [0];
 				break;
 			}
 			break;
@@ -50,10 +56,8 @@ public class ARObjectMaker : MonoBehaviour {
 			string filepath = spspids [0];
 			if (extention == "MOV" || extention == "mov") {
 				madeObject = Instantiate (PicturePrefab, pos, rot, AROBjectParent);
-				return MoviePrefab;
 			} else {
 				madeObject = Instantiate (MoviePrefab, pos, rot, AROBjectParent);
-				return PicturePrefab;
 			}
 			break;
 		}

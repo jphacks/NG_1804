@@ -16,11 +16,21 @@ public class AREventManager : MonoBehaviour {
 	private bool sessionStarted = false;
 
 	string usingDataID = "";
+	List<string> madeIDs = new List<string> ();
+	public ARObjectMaker AROM;
+	public GameManager GM;
+	public LocationUpdater LU;
+
 
 	// Use this for initialization
 	void Start () {
 		UnityARSessionNativeInterface.ARFrameUpdatedEvent += OnFrameUpdate;
-		//UnityARSessionNativeInterface.ARUserAnchorAdded += 
+		UnityARSessionNativeInterface.ARUserAnchorAddedEvent += OnUserAnchorAdded;
+	}
+
+	void Update(){
+		Debug.Log(LU.Location.latitude);
+		Debug.Log(LU.Location.longitude);
 	}
 
 	public ARWorldMappingStatus lastStatus;
@@ -33,7 +43,18 @@ public class AREventManager : MonoBehaviour {
 	}
 
 	public void OnUserAnchorAdded(ARUserAnchor anchor){
-		
+		GM.AddDicIDs (anchor.identifier, AROM.lastID);
+		madeIDs.Add (anchor.identifier);
+		Debug.Log ("Anchor is Added");
+	}
+
+	public void OnUserAnchorUpdated(ARUserAnchor anchor){
+		if (GM.dicIDs.ContainsKey (anchor.identifier)) {
+			return;
+		} else {
+			AROM.MakeObjectFromID (anchor.identifier, Vector3.zero, Quaternion.identity);
+			Debug.Log ("GameObject is Made From Anchor");
+		}
 	}
 
 	public void Save()
@@ -47,6 +68,7 @@ public class AREventManager : MonoBehaviour {
 			if (usingDataID != "")
 				obj.ObjectId = usingDataID;
 			obj.Add ("worldmap", worldmap.SerializeToByteArray());
+			obj.Add ("IDPair", GM.dicIDs);
 			obj.SaveAsync ((NCMBException e) => {      
 				if (e != null) {
 					//エラー処理
