@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class UnityiOSScreenCapture : MonoBehaviour {
 
     //キャンバスグループを作る
+    [SerializeField]
     private CanvasGroup canvasGroup;
     //写真を撮ったときに光る用の画像
     [SerializeField]
@@ -103,9 +104,9 @@ public class UnityiOSScreenCapture : MonoBehaviour {
 
 		tex.ReadPixels(new Rect(0, 0, width, height), 0, 0);
 		tex.Apply();
-        /*//画面が光るようにする　引数はRGBA
+        //画面が光るようにする　引数はRGBA
         PhotoFlash.color = new Color(1f,1f,1f, 0.2f);
-        StartCoroutine(Flash());*/
+        StartCoroutine(Flash());
 
         byte[] screenshot = tex.EncodeToPNG();
 
@@ -165,7 +166,7 @@ public class UnityiOSScreenCapture : MonoBehaviour {
     IEnumerator Flash()
     {
         yield return new WaitForSeconds(0.1f);
-        PhotoFlash.color = new Color(0f, 0.0f, 0f, 0.0f);
+        PhotoFlash.color = new Color(0f, 0.0f, 0f, 0.2f);
     }
 
 }

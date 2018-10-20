@@ -1050,6 +1050,11 @@ Prefab:
       propertyPath: PhotoFlash
       value: 
       objectReference: {fileID: 399660715}
+    - target: {fileID: 114979420754295944, guid: e4087303f70dd234e93a0d7db97e28c8,
+        type: 2}
+      propertyPath: canvasGroup
+      value: 
+      objectReference: {fileID: 1671733524}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4087303f70dd234e93a0d7db97e28c8, type: 2}
   m_IsPrefabAsset: 0
