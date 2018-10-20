@@ -8,23 +8,23 @@ namespace Kakera
         [SerializeField]
         private Unimgpicker imagePicker;
 
-        [SerializeField]
-        private MeshRenderer imageRenderer;
+        
 
         void Awake()
         {
             imagePicker.Completed += (string path) =>
             {
-                StartCoroutine(LoadImage(path, imageRenderer));
+                StartCoroutine(LoadImage(path));
             };
         }
 
         public void OnPressShowPicker()
         {
+            //カメラロール
             imagePicker.Show("Select Image", "unimgpicker", 1024);
         }
 
-        private IEnumerator LoadImage(string path, MeshRenderer output)
+        private IEnumerator LoadImage(string path)
         {
             var url = "file://" + path;
             var www = new WWW(url);
@@ -36,7 +36,7 @@ namespace Kakera
                 Debug.LogError("Failed to load texture url:" + url);
             }
 
-            output.material.mainTexture = texture;
+           // output.material.mainTexture = texture;
         }
     }
 }
