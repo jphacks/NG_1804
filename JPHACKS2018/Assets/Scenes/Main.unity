@@ -1240,21 +1240,38 @@ Prefab:
     - target: {fileID: 114323788735094346, guid: cc982a72b8b8b44bdac781ee689bb2fe,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114408331883446990, guid: cc982a72b8b8b44bdac781ee689bb2fe,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114174799174976992, guid: cc982a72b8b8b44bdac781ee689bb2fe,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114323788735094346, guid: cc982a72b8b8b44bdac781ee689bb2fe,
+        type: 2}
+      propertyPath: StampPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 100000, guid: c573f9ca3137f4a4d9a665b89f15b2c7, type: 3}
+    - target: {fileID: 114323788735094346, guid: cc982a72b8b8b44bdac781ee689bb2fe,
+        type: 2}
+      propertyPath: MoviePrefab
+      value: 
+      objectReference: {fileID: 1884242853860802, guid: c4c08e1b666e34aa2bc6302dcd5d8a56,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc982a72b8b8b44bdac781ee689bb2fe, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &450872509 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114323788735094346, guid: cc982a72b8b8b44bdac781ee689bb2fe,
+    type: 2}
+  m_PrefabInternal: {fileID: 450872508}
+  m_Script: {fileID: 11500000, guid: ef3a50dcd6fda442bad39726351148ab, type: 3}
 --- !u!1 &478524888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,52 +1429,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &595646821
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 595646822}
-  - component: {fileID: 595646823}
-  m_Layer: 5
-  m_Name: PickerController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &595646822
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 595646821}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1671733522}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -508, y: -151.04}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &595646823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 595646821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38e0e30c44772437ba287a4d065987d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imagePicker: {fileID: 1686689991}
 --- !u!224 &806487886 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224734755204442328, guid: e1323ef11c3de92488b86c1d0cf724ec,
@@ -2695,7 +2666,6 @@ RectTransform:
   - {fileID: 1968120170}
   - {fileID: 44872915}
   - {fileID: 830310785}
-  - {fileID: 595646822}
   - {fileID: 2092480782}
   - {fileID: 1895599804}
   m_Father: {fileID: 0}
@@ -2719,6 +2689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Scroll: {fileID: 2092480781}
   imagePicker: {fileID: 1686689991}
+  AROM: {fileID: 450872509}
 --- !u!225 &1671733524
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3377,8 +3348,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 595646823}
-        m_MethodName: OnPressShowPicker
+      - m_Target: {fileID: 1671733523}
+        m_MethodName: OnTapPicture
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3540,6 +3511,21 @@ Prefab:
       propertyPath: m_Name
       value: StampSmallButton (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114799558136369110, guid: e1323ef11c3de92488b86c1d0cf724ec,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1671733523}
+    - target: {fileID: 114799558136369110, guid: e1323ef11c3de92488b86c1d0cf724ec,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnTapStamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 114799558136369110, guid: e1323ef11c3de92488b86c1d0cf724ec,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: hata
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
   m_IsPrefabAsset: 0
@@ -3615,7 +3601,7 @@ RectTransform:
   - {fileID: 1420018254}
   - {fileID: 112906461}
   m_Father: {fileID: 1671733522}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

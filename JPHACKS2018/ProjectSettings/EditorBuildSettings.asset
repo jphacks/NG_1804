@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/iOSScreenCapture/sample.unity
     guid: 9b22ac9d3de7d403488738108ddb9de1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ARTest.unity
     guid: 9207ac7a1b24244d0bb8237544b31e57
   - enabled: 1

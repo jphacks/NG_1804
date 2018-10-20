@@ -15,6 +15,9 @@ namespace Kakera
         [SerializeField]
         private Unimgpicker imagePicker;
 
+		[SerializeField]
+		private ARObjectMaker AROM;
+
         TouchScreenKeyboard keyboard;
 
         private void Awake()
@@ -41,7 +44,7 @@ namespace Kakera
          
             string idstamp;
             idstamp = "stamp:" + id;
-            //MakeARObject(idstamp);
+            AROM.MakeARObject(idstamp);
         }
 
         //コメント
@@ -58,7 +61,7 @@ namespace Kakera
             {
                 yield return new WaitForSeconds(0.1f);
             }
-            MakeARObject("comment:" + keyboard.text);
+            AROM.MakeARObject("comment:" + keyboard.text);
         }
 
 
@@ -73,8 +76,9 @@ namespace Kakera
         //写真用関数
         private void LoadImage(string path)
         {
-            MakeARObject("photo:" + path);
+			Debug.Log ("loaded image:"+path);
+            AROM.MakeARObject("picture:" + path);
         }
-
+			
     }
 }

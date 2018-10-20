@@ -7,6 +7,7 @@
 //
 
 #import "Picker.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 
 #pragma mark Config
 
@@ -40,6 +41,8 @@ const char* MESSAGE_FAILED_COPY = "Failed to copy the image";
     self.pickerController = [[UIImagePickerController alloc] init];
     self.pickerController.delegate = self;
     
+    self.pickerController.mediaTypes =[UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    
     self.pickerController.allowsEditing = NO;
     self.pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
@@ -52,12 +55,22 @@ const char* MESSAGE_FAILED_COPY = "Failed to copy the image";
 #pragma mark UIImagePickerControllerDelegate
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
+    if([mediaType isEqualToString:(NSString*)@"public.movie"]){
+        NSLog(@"mediaType %@", mediaType);
+        //Movie
+        NSURL *url = [info objectForKey:UIImagePickerControllerMediaURL];
+        UnitySendMessage(CALLBACK_OBJECT, CALLBACK_METHOD, [url.absoluteString UTF8String]);
+    }
+    
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     if (image == nil) {
         UnitySendMessage(CALLBACK_OBJECT, CALLBACK_METHOD_FAILURE, MESSAGE_FAILED_FIND);
         [self dismissPicker];
         return;
     }
+    
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     if (paths.count == 0) {
@@ -66,12 +79,14 @@ const char* MESSAGE_FAILED_COPY = "Failed to copy the image";
         return;
     }
     
+    
     NSString *imageName = self.outputFileName;
     if ([imageName hasSuffix:@".png"] == NO) {
         imageName = [imageName stringByAppendingString:@".png"];
     }
     
     NSString *imageSavePath = [(NSString *)[paths objectAtIndex:0] stringByAppendingPathComponent:imageName];
+    
     NSData *png = UIImagePNGRepresentation(image);
     if (png == nil) {
         UnitySendMessage(CALLBACK_OBJECT, CALLBACK_METHOD_FAILURE, MESSAGE_FAILED_COPY);

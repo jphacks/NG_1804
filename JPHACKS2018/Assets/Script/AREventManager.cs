@@ -26,24 +26,36 @@ public class AREventManager : MonoBehaviour {
 			Save ();
 		}
 		lastStatus = status;
+		Debug.Log (status);
+		Debug.Log (cam.trackingReason);
 	}
 
 	public void OnUserAnchorAdded(ARUserAnchor anchor){
 		GM.AddDicIDs (anchor.identifier, AROM.lastID);
-		madeIDs.Add (anchor.identifier);
+		if (AROM.nowMade) {
+			madeIDs.Add (anchor.identifier);
+			AROM.nowMade = false;
+			Debug.Log ("Object is Made by User");
+		} else {
+			if (madeIDs.Contains (anchor.identifier)) {
+				return;
+			} else {
+				Vector3 pos = UnityARMatrixOps.GetPosition (anchor.transform);
+				Quaternion rot = UnityARMatrixOps.GetRotation (anchor.transform);
+				AROM.MakeObjectFromID (GM.dicIDs[anchor.identifier], pos, rot);
+				madeIDs.Add (anchor.identifier);
+				Debug.Log ("GameObject is Made From Anchor");
+			}
+		}
 		Debug.Log ("Anchor is Added");
 	}
 
 	public void OnUserAnchorUpdated(ARUserAnchor anchor){
-		if (GM.dicIDs.ContainsKey (anchor.identifier)) {
-			return;
-		} else {
-			Vector3 pos = UnityARMatrixOps.GetPosition (anchor.transform);
-			Quaternion rot = UnityARMatrixOps.GetRotation (anchor.transform);
-			AROM.MakeObjectFromID (GM.dicIDs[anchor.identifier], pos, rot);
-			Debug.Log ("GameObject is Made From Anchor");
-		}
+		Debug.Log ("Anchor is Updated id:" + anchor.identifier);
+
 	}
+
+	
 
 	public void Save()
 	{

@@ -34,7 +34,9 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void AddDicIDs(string anchorid, string objectid){
-		dicIDs.Add (anchorid, objectid);
+		if (!dicIDs.ContainsKey (anchorid)) {
+			dicIDs.Add (anchorid, objectid);
+		}
 	}
 
 	// Update is called once per frame

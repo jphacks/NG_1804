@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114174799174976992}
   - component: {fileID: 114408331883446990}
   - component: {fileID: 114323788735094346}
+  - component: {fileID: 114695183800119292}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -53,6 +54,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 999dcce1ee9c24dd2929566ec305a435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startAlignment: 0
+  planeDetection: 3
+  detectionImages: {fileID: 0}
+  getPointCloud: 1
+  enableLightEstimation: 1
+  enableAutoFocus: 1
   AREM: {fileID: 114408331883446990}
   hasStarted: 0
 --- !u!114 &114323788735094346
@@ -66,12 +73,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef3a50dcd6fda442bad39726351148ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CommentPrefab: {fileID: 0}
+  CommentPrefab: {fileID: 1761647461326008, guid: b17365361784c439bbe64d4f1863fb01,
+    type: 2}
   StampPrefab:
-  - {fileID: 1003396984878508, guid: d56ba70698e8f45a8a304ef2af75bd88, type: 2}
-  PicturePrefab: {fileID: 0}
+  - {fileID: 1179507434657630, guid: e7917023a80dc43a19be3733a80605fc, type: 2}
+  PicturePrefab: {fileID: 1320214722270082, guid: 9c9b8565414c44ed285571b4ab436d2c,
+    type: 2}
   MoviePrefab: {fileID: 0}
   AROBjectParent: {fileID: 0}
+  lastID: 
+  GM: {fileID: 114174799174976992}
+  AREM: {fileID: 114408331883446990}
 --- !u!114 &114408331883446990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,10 +95,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cf1095bed6c04491888b4904b24285b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startAlignment: 0
-  planeDetection: 3
-  detectionImages: {fileID: 0}
-  getPointCloud: 1
-  enableLightEstimation: 1
-  enableAutoFocus: 1
+  usingDataID: 
+  AROM: {fileID: 114323788735094346}
+  GM: {fileID: 114174799174976992}
+  LU: {fileID: 114695183800119292}
   lastStatus: 0
+--- !u!114 &114695183800119292
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1421555601525972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25e33c882a1a40389f3d13b80c309fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IntervalSeconds: 1
+  Status: 0
