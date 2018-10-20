@@ -9,6 +9,8 @@ namespace Kakera
     //スタンプとコメントと写真を表示するためのもの
     public class StampFunction : MonoBehaviour
     {
+        [SerializeField]
+        private GameObject Scroll;
         //写真
         [SerializeField]
         private Unimgpicker imagePicker;
@@ -28,9 +30,15 @@ namespace Kakera
         {
 
         }
-        //スタンプ
+        //スタンプを送れるモードにする
+        public void StampButton()
+        {
+            Scroll.SetActive(true);
+        }
+        //個々のスタンプ
         public void OnTapStamp(string id)
         {
+         
             string idstamp;
             idstamp = "stamp:" + id;
             //MakeARObject(idstamp);

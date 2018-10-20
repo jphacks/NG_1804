@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class buttonreference : MonoBehaviour {
     public GameObject StampButton;
@@ -9,11 +10,12 @@ public class buttonreference : MonoBehaviour {
     public bool mode;
 	// Use this for initialization
 	void Start () {
-		
-	}
+        StampButton.SetActive(true);
+    }
 	
 	// Update is called once per frame
 	void Update () {
+        
             mode = StampButton.activeSelf;
         }
         public void OnClick()
