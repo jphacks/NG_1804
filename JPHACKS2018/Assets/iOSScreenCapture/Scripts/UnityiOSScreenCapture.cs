@@ -103,9 +103,9 @@ public class UnityiOSScreenCapture : MonoBehaviour {
 
 		tex.ReadPixels(new Rect(0, 0, width, height), 0, 0);
 		tex.Apply();
-        /*//画面が光るようにする　引数はRGBA
+        //画面が光るようにする　引数はRGBA
         PhotoFlash.color = new Color(1f,1f,1f, 0.2f);
-        StartCoroutine(Flash());*/
+        StartCoroutine(Flash());
 
         byte[] screenshot = tex.EncodeToPNG();
 
