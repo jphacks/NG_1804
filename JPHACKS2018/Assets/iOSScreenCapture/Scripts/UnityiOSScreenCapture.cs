@@ -205,7 +205,7 @@ namespace SocialConnector
             var shareUrl = "https://twitter.com/shiro_nobi_nobi";
             //var imagePath = Application.persistentDataPath + "/image.png";
             //shiro変更
-            SocialConnector.Share(shareText, "shareUrl",imagePath);
+            SocialConnector.Share(shareText, shareUrl,imagePath);
 }
     }
 
