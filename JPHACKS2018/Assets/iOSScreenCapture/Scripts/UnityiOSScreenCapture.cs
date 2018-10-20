@@ -127,7 +127,7 @@ namespace SocialConnector
             tex.Apply();
 
             //追加
-            StartCoroutine("_share");
+            StartCoroutine(Sample());
 
             byte[] screenshot = tex.EncodeToPNG();
 
