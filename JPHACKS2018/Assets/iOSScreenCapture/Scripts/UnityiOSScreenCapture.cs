@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class UnityiOSScreenCapture : MonoBehaviour {
 
     //キャンバスグループを作る
+    [SerializeField]
     private CanvasGroup canvasGroup;
     //写真を撮ったときに光る用の画像
     [SerializeField]
