@@ -31,7 +31,8 @@ public class UnityiOS : MonoBehaviour {
 		_PlaySystemShutterSound();
 	}
 
-	public static void SaveTexture(byte[] textureByte, int length) {
+	public static void 0309ERIngi
+        (byte[] textureByte, int length) {
 		_SendTexture(textureByte, length);
 	}
 
