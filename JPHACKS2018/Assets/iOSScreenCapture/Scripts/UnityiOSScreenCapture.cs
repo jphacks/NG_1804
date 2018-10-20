@@ -165,7 +165,7 @@ public class UnityiOSScreenCapture : MonoBehaviour {
     //カメラのフラッシュのためのコルーチン
     IEnumerator Flash()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(10);
         PhotoFlash.color = new Color(0f, 0.0f, 0f, 0f);
     }
 
