@@ -38,5 +38,8 @@ namespace Kakera
 
            // output.material.mainTexture = texture;
         }
+
+
+
     }
 }
