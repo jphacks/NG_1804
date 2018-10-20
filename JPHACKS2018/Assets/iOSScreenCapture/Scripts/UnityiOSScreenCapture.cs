@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class UnityiOSScreenCapture : MonoBehaviour {
 
+    //キャンバスグループを作る
+    private CanvasGroup canvasGroup;
     //写真を撮ったときに光る用の画像
     [SerializeField]
     private Image PhotoFlash;
@@ -92,7 +94,7 @@ public class UnityiOSScreenCapture : MonoBehaviour {
     }
 
 	private IEnumerator _CaptureScreenShot() {
-		//canvasGroup.alpha = 0; //みたいな処理を入れておくと撮影時にUIを外すといった事が出来ます
+		canvasGroup.alpha = 0; //みたいな処理を入れておくと撮影時にUIを外すといった事が出来ます
 		yield return new WaitForEndOfFrame();
 
 		var width = Screen.width;
@@ -109,7 +111,7 @@ public class UnityiOSScreenCapture : MonoBehaviour {
 
 		UnityiOS.SaveTexture(screenshot, screenshot.Length);
 
-		//canvasGrouo.alpha = 1;
+		canvasGroup.alpha = 1;
 	}
 
 	//撮影後コールバックされる関数

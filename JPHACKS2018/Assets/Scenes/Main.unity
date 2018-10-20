@@ -1691,6 +1691,7 @@ GameObject:
   - component: {fileID: 1671733520}
   - component: {fileID: 1671733519}
   - component: {fileID: 1671733523}
+  - component: {fileID: 1671733524}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1794,6 +1795,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imagePicker: {fileID: 1686689991}
+--- !u!225 &1671733524
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1671733518}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &1686689990
 Prefab:
   m_ObjectHideFlags: 0
