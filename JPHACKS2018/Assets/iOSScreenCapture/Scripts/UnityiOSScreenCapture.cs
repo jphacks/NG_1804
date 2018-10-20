@@ -4,10 +4,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Runtime.InteropServices;
+using UnityEngine.UI;
 
 public class UnityiOSScreenCapture : MonoBehaviour {
 
-	public UnityEvent OnCompleteCapture;
+    //写真を撮ったときに光る用の画像
+    [SerializeField]
+    private Image PhotoFlash;
+
+    private void Start()
+    {
+        //最初は透明にしておく
+        PhotoFlash.color = Color.clear;
+    }
+
+    public UnityEvent OnCompleteCapture;
 	public UnityEvent OnFailCapture;
 
     //合体させた
@@ -90,7 +101,11 @@ public class UnityiOSScreenCapture : MonoBehaviour {
 
 		tex.ReadPixels(new Rect(0, 0, width, height), 0, 0);
 		tex.Apply();
-		byte[] screenshot = tex.EncodeToPNG();
+        //画面が光るようにする　引数はRGBA
+        PhotoFlash.color = new Color(1f,1f,1f, 0.2f);
+        StartCoroutine(Flash());
+
+        byte[] screenshot = tex.EncodeToPNG();
 
 		UnityiOS.SaveTexture(screenshot, screenshot.Length);
 
@@ -100,7 +115,8 @@ public class UnityiOSScreenCapture : MonoBehaviour {
 	//撮影後コールバックされる関数
 	void DidImageWriteToAlbum(string errorDescription) {
 		Handheld.StopActivityIndicator();
-		if (string.IsNullOrEmpty(errorDescription)) {
+        
+        if (string.IsNullOrEmpty(errorDescription)) {
 			OnCompleteCapture.Invoke();
 		}else{
 			OnFailCapture.Invoke();
@@ -142,4 +158,12 @@ public class UnityiOSScreenCapture : MonoBehaviour {
     }
 
     /*合体させた部分*/
+
+    //カメラのフラッシュのためのコルーチン
+    IEnumerator Flash()
+    {
+        yield return new WaitForSeconds(0.1f);
+        PhotoFlash.color = new Color(0f, 0.0f, 0f, 0.0f);
+    }
+
 }
