@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//スタンプとコメントと写真を表示するためのもの
 public class StampFunction : MonoBehaviour
 {
 
@@ -13,7 +14,7 @@ public class StampFunction : MonoBehaviour
 
     }
     //スタンプ
-    void OnTapStamp(string id)
+    public void OnTapStamp(string id)
     {
         string idstamp;
         idstamp = "stamp:" + id;
@@ -21,19 +22,12 @@ public class StampFunction : MonoBehaviour
     }
 
     //コメント
-    void OnTapComment()
+    public void OnTapComment()
     {
         keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
         StartCoroutine(ZeroPointOneSecondWait());
     }
-    //写真と動画
-    void OnTapPicture()
-    {
-        //カメラロールの出現
-
-
-    }
-
+   
     //コメント用のコルーチン
     IEnumerator ZeroPointOneSecondWait()
     {
@@ -41,6 +35,17 @@ public class StampFunction : MonoBehaviour
         {
             yield return new WaitForSeconds(0.1f);
         }
-        MakeARObject("comment" + keyboard.text);
+        MakeARObject("comment:" + keyboard.text);
     }
+
+
+    //写真と動画
+    public void OnTapPicture()
+    {
+        
+        //MakeARObject("photo:" + );
+
+
+    }
+
 }
