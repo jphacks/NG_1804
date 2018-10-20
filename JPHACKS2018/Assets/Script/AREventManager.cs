@@ -5,17 +5,7 @@ using UnityEngine.XR.iOS;
 using NCMB;
 
 public class AREventManager : MonoBehaviour {
-	private UnityARSessionNativeInterface m_session;
-	[Header("AR Config Options")]
-	public UnityARAlignment startAlignment = UnityARAlignment.UnityARAlignmentGravity;
-	public UnityARPlaneDetection planeDetection = UnityARPlaneDetection.Horizontal;
-	public ARReferenceImagesSet detectionImages = null;
-	public bool getPointCloud = true;
-	public bool enableLightEstimation = true;
-	public bool enableAutoFocus = true;
-	private bool sessionStarted = false;
-
-	string usingDataID = "";
+	public string usingDataID = "";
 	List<string> madeIDs = new List<string> ();
 	public ARObjectMaker AROM;
 	public GameManager GM;
@@ -26,6 +16,7 @@ public class AREventManager : MonoBehaviour {
 	void Start () {
 		UnityARSessionNativeInterface.ARFrameUpdatedEvent += OnFrameUpdate;
 		UnityARSessionNativeInterface.ARUserAnchorAddedEvent += OnUserAnchorAdded;
+		UnityARSessionNativeInterface.ARUserAnchorUpdatedEvent += OnUserAnchorUpdated;
 	}
 
 	public ARWorldMappingStatus lastStatus;
@@ -47,7 +38,9 @@ public class AREventManager : MonoBehaviour {
 		if (GM.dicIDs.ContainsKey (anchor.identifier)) {
 			return;
 		} else {
-			AROM.MakeObjectFromID (anchor.identifier, Vector3.zero, Quaternion.identity);
+			Vector3 pos = UnityARMatrixOps.GetPosition (anchor.transform);
+			Quaternion rot = UnityARMatrixOps.GetRotation (anchor.transform);
+			AROM.MakeObjectFromID (GM.dicIDs[anchor.identifier], pos, rot);
 			Debug.Log ("GameObject is Made From Anchor");
 		}
 	}
@@ -79,38 +72,5 @@ public class AREventManager : MonoBehaviour {
 		} else {
 			Debug.Log ("Data is Null");
 		}
-	}
-
-	//Load
-	public void StartSession(ARWorldMap arWorldMap = null)
-	{
-		m_session = UnityARSessionNativeInterface.GetARSessionNativeInterface();
-
-		Application.targetFrameRate = 60;
-		ARKitWorldTrackingSessionConfiguration config = new ARKitWorldTrackingSessionConfiguration();
-		config.planeDetection = planeDetection;
-		config.alignment = startAlignment;
-		config.getPointCloudData = getPointCloud;
-		config.enableLightEstimation = enableLightEstimation;
-		config.enableAutoFocus = enableAutoFocus;
-		config.worldMap = arWorldMap;
-		if (detectionImages != null) {
-			config.referenceImagesGroupName = detectionImages.resourceGroupName;
-		}
-
-		/*
-		UnityARSessionRunOption runOption = UnityARSessionRunOption.ARSessionRunOptionRemoveExistingAnchors |
-			UnityARSessionRunOption.ARSessionRunOptionResetTracking;
-			*/
-
-		m_session.RunWithConfig (config);
-		//m_session.AddUserAnchorFromGameObject
-
-		/*
-		if (config.IsSupported) {
-			m_session.RunWithConfig (config);
-			//UnityARSessionNativeInterface.ARFrameUpdatedEvent += FirstFrameUpdate;
-		}
-		*/
 	}
 }
