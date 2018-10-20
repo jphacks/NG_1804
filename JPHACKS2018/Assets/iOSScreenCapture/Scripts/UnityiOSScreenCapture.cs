@@ -85,8 +85,8 @@ public class UnityiOSScreenCapture : MonoBehaviour {
 			typeof(PHAuthorizationStatus), UnityiOS.HasCameraRollPermission());
 		UnityiOS.PlaySystemShutterSound();
 		if(phstatus == PHAuthorizationStatus.Authorized) {
-			Handheld.SetActivityIndicatorStyle(UnityEngine.iOS.ActivityIndicatorStyle.Gray);
-			Handheld.StartActivityIndicator();
+			//Handheld.SetActivityIndicatorStyle(UnityEngine.iOS.ActivityIndicatorStyle.Gray);
+			//Handheld.StartActivityIndicator();
 			StartCoroutine(_CaptureScreenShot());
 		} else {
 			OnFailCapture.Invoke();
