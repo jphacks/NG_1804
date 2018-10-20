@@ -165,7 +165,7 @@ public class UnityiOSScreenCapture : MonoBehaviour {
     IEnumerator Flash()
     {
         yield return new WaitForSeconds(0.1f);
-        PhotoFlash.color = new Color(0f, 0.0f, 0f, 0.0f);
+        PhotoFlash.color = new Color(0f, 0.0f, 0f, 0.2f);
     }
 
 }
