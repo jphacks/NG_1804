@@ -28,11 +28,6 @@ public class AREventManager : MonoBehaviour {
 		UnityARSessionNativeInterface.ARUserAnchorAddedEvent += OnUserAnchorAdded;
 	}
 
-	void Update(){
-		Debug.Log(LU.Location.latitude);
-		Debug.Log(LU.Location.longitude);
-	}
-
 	public ARWorldMappingStatus lastStatus;
 	public void OnFrameUpdate(UnityARCamera cam){
 		ARWorldMappingStatus status = cam.worldMappingStatus;
@@ -69,6 +64,8 @@ public class AREventManager : MonoBehaviour {
 				obj.ObjectId = usingDataID;
 			obj.Add ("worldmap", worldmap.SerializeToByteArray());
 			obj.Add ("IDPair", GM.dicIDs);
+			NCMBGeoPoint geoobj = new NCMBGeoPoint (LU.Location.latitude, LU.Location.longitude);
+			obj.Add ("point", geoobj);
 			obj.SaveAsync ((NCMBException e) => {      
 				if (e != null) {
 					//エラー処理

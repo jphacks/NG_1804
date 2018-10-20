@@ -407,8 +407,8 @@ PlayerSettings:
   enableInternalProfiler: 0
   logObjCUncaughtExceptions: 1
   enableCrashReportAPI: 0
-  cameraUsageDescription: Use Camera for get AR picture
-  locationUsageDescription: 
+  cameraUsageDescription: Use Camera to get AR picture
+  locationUsageDescription: Use Location to get your position
   microphoneUsageDescription: 
   switchNetLibKey: 
   switchSocketMemoryPoolSize: 6144

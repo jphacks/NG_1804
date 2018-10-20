@@ -30,6 +30,7 @@ public class LocationUpdater : MonoBehaviour {
 			{
 				// FIXME 位置情報を有効にして!! 的なダイアログの表示処理を入れると良さそう
 				Debug.Log("location is disabled by user");
+				Input.location.Start();
 			}
 
 			// 指定した秒数後に再度判定を走らせる
