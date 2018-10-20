@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: f94f16e04e8b94a85ba263c996620eb0
+  - enabled: 1
+    path: Assets/Scenes/Tilte.unity
+    guid: 045e300b703b68647a44d3291645314f
   m_configObjects: {}
