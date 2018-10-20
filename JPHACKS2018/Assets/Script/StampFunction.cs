@@ -22,17 +22,18 @@ namespace Kakera
 
         private void Awake()
         {
+			/*
+			Debug.Log ("stampFunction awake");
             //写真のために読み込んでいる
             imagePicker.Completed += (string path) =>
             {
+				StartCoroutine(LoadImageCoroutine(path));
+				Debug.Log("Completed");
                 LoadImage(path);
             };
+            */
         }
-
-        void MakeARObject(string id)
-        {
-
-        }
+			
         //スタンプを送れるモードにする
         public void StampButton()
         {
@@ -79,6 +80,13 @@ namespace Kakera
 			Debug.Log ("loaded image:"+path);
             AROM.MakeARObject("picture:" + path);
         }
+
+		//写真用コルーチン
+		private IEnumerator LoadImageCoroutine(string path)
+		{
+			yield return new WaitForSeconds (3);
+			Debug.Log ("pic"+path);
+		}
 			
     }
 }

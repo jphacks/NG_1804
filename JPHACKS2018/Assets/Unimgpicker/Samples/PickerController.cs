@@ -8,7 +8,8 @@ namespace Kakera
         [SerializeField]
         private Unimgpicker imagePicker;
 
-        
+		[SerializeField]
+		ARObjectMaker AROM;
 
         void Awake()
         {
@@ -26,6 +27,11 @@ namespace Kakera
 
         private IEnumerator LoadImage(string path)
         {
+			string id = "picture:" + path;
+			AROM.MakeARObject (id);
+			yield return new WaitForSeconds (1);
+			/*
+			Debug.Log (path);
             var url = "file://" + path;
             var www = new WWW(url);
             yield return www;
@@ -35,6 +41,7 @@ namespace Kakera
             {
                 Debug.LogError("Failed to load texture url:" + url);
             }
+            */
 
            // output.material.mainTexture = texture;
         }

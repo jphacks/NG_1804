@@ -42,7 +42,7 @@ public class AREventManager : MonoBehaviour {
 			} else {
 				Vector3 pos = UnityARMatrixOps.GetPosition (anchor.transform);
 				Quaternion rot = UnityARMatrixOps.GetRotation (anchor.transform);
-				AROM.MakeObjectFromID (GM.dicIDs[anchor.identifier], pos, rot);
+				AROM.MakeObjectFromID (GM.dicIDs[anchor.identifier], pos, rot, true);
 				madeIDs.Add (anchor.identifier);
 				Debug.Log ("GameObject is Made From Anchor");
 			}

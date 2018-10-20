@@ -37,7 +37,7 @@ public class ARObjectMaker : MonoBehaviour {
 		}
 	}
 
-	public GameObject MakeObjectFromID(string id, Vector3 pos, Quaternion rot){
+	public GameObject MakeObjectFromID(string id, Vector3 pos, Quaternion rot, bool fromLoad = false){
 		GameObject madeObject = null;
 		GameObject cam = Camera.main.gameObject;
 		string[] spids = id.Split (':');
@@ -56,17 +56,18 @@ public class ARObjectMaker : MonoBehaviour {
 			}
 			break;
 		case "picture":
-			string[] spspids = spid.Split ('.');
-			string extention = spspids [1];
-			string filepath = spspids [0];
-			if (extention == "MOV" || extention == "mov") {
-				madeObject = Instantiate (MoviePrefab, pos, rot, AROBjectParent);
-				madeObject.GetComponent<VideoPlayer> ().url = spid;
-				madeObject.GetComponent<VideoPlayer> ().Play ();
-			} else {
-				madeObject = Instantiate (PicturePrefab, pos, rot, AROBjectParent);
-				MeshRenderer output = madeObject.GetComponent<MeshRenderer> ();
-				StartCoroutine(SetPicture (spid, output));
+			if (!fromLoad) {
+				Debug.Log ("path:"+spid);
+				if (spids.Length == 3) {
+					madeObject = Instantiate (MoviePrefab, pos, rot, AROBjectParent);
+					madeObject.GetComponent<VideoPlayer> ().url = spids[1] + ":" + spids[2];
+					madeObject.GetComponent<VideoPlayer> ().Play ();
+					Debug.Log ("Movie is Played");
+				} else {
+					madeObject = Instantiate (PicturePrefab, pos, rot, AROBjectParent);
+					MeshRenderer output = madeObject.GetComponent<MeshRenderer> ();
+					StartCoroutine (SetPicture (spid, output));
+				}
 			}
 			break;
 		}

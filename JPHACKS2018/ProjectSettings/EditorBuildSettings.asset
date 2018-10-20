@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tilte.unity
     guid: 045e300b703b68647a44d3291645314f
+  - enabled: 0
+    path: Assets/Unimgpicker/Samples/Picker.unity
+    guid: 5e6bb1628afec4fabb31869b32c39149
   m_configObjects: {}
