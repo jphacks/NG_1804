@@ -96,7 +96,10 @@ public class UnityiOSScreenCapture : MonoBehaviour {
 
 	private IEnumerator _CaptureScreenShot() {
 		canvasGroup.alpha = 0; //みたいな処理を入れておくと撮影時にUIを外すといった事が出来ます
-		yield return new WaitForEndOfFrame();
+        //画面が光るようにする　引数はRGBA
+        PhotoFlash.color = new Color(1f, 1f, 1f, 0.9f);
+        StartCoroutine(Flash());
+        yield return new WaitForEndOfFrame();
 
 		var width = Screen.width;
 		var height = Screen.height;
@@ -104,9 +107,7 @@ public class UnityiOSScreenCapture : MonoBehaviour {
 
 		tex.ReadPixels(new Rect(0, 0, width, height), 0, 0);
 		tex.Apply();
-        //画面が光るようにする　引数はRGBA
-        PhotoFlash.color = new Color(1f,1f,1f, 0.7f);
-        StartCoroutine(Flash());
+        
 
         byte[] screenshot = tex.EncodeToPNG();
 
@@ -165,7 +166,7 @@ public class UnityiOSScreenCapture : MonoBehaviour {
     //カメラのフラッシュのためのコルーチン
     IEnumerator Flash()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.8f);
         PhotoFlash.color = new Color(0f, 0.0f, 0f, 0f);
     }
 
