@@ -521,6 +521,10 @@ Prefab:
       propertyPath: m_Name
       value: StampSmallButton (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1030628242287706, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
   m_IsPrefabAsset: 0
@@ -888,6 +892,10 @@ Prefab:
       propertyPath: m_Name
       value: StampSmallButton (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1030628242287706, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
   m_IsPrefabAsset: 0
@@ -1248,6 +1256,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114323788735094346, guid: cc982a72b8b8b44bdac781ee689bb2fe,
+        type: 2}
+      propertyPath: StampPrefab.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4648485704238306, guid: cc982a72b8b8b44bdac781ee689bb2fe, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1311,6 +1324,16 @@ Prefab:
       value: 
       objectReference: {fileID: 1884242853860802, guid: c4c08e1b666e34aa2bc6302dcd5d8a56,
         type: 2}
+    - target: {fileID: 114323788735094346, guid: cc982a72b8b8b44bdac781ee689bb2fe,
+        type: 2}
+      propertyPath: StampPrefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 100000, guid: 88cc8e1266d9e6947a04e632025cf7a9, type: 3}
+    - target: {fileID: 114323788735094346, guid: cc982a72b8b8b44bdac781ee689bb2fe,
+        type: 2}
+      propertyPath: StampPrefab.Array.data[2]
+      value: 
+      objectReference: {fileID: 100006, guid: 80a77ff936cc52744b24ca07e4ebd6ae, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc982a72b8b8b44bdac781ee689bb2fe, type: 2}
   m_IsPrefabAsset: 0
@@ -1491,6 +1514,10 @@ Prefab:
     - target: {fileID: 1030628242287706, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
       propertyPath: m_Name
       value: StampSmallButton (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030628242287706, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
@@ -2137,6 +2164,10 @@ Prefab:
       propertyPath: m_Name
       value: StampSmallButton (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1030628242287706, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
   m_IsPrefabAsset: 0
@@ -2262,6 +2293,27 @@ Prefab:
       propertyPath: m_Name
       value: StampSmallButton (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114799558136369110, guid: e1323ef11c3de92488b86c1d0cf724ec,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1671733523}
+    - target: {fileID: 114799558136369110, guid: e1323ef11c3de92488b86c1d0cf724ec,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnTapStamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 114799558136369110, guid: e1323ef11c3de92488b86c1d0cf724ec,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: JP
+      objectReference: {fileID: 0}
+    - target: {fileID: 114436330124597192, guid: e1323ef11c3de92488b86c1d0cf724ec,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6904820d9bf2382448ba9f53cc8eb338,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
   m_IsPrefabAsset: 0
@@ -2629,6 +2681,10 @@ Prefab:
       propertyPath: m_Name
       value: StampSmallButton (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1030628242287706, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
   m_IsPrefabAsset: 0
@@ -2877,6 +2933,27 @@ Prefab:
       propertyPath: m_Name
       value: StampSmallButton (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114799558136369110, guid: e1323ef11c3de92488b86c1d0cf724ec,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1671733523}
+    - target: {fileID: 114799558136369110, guid: e1323ef11c3de92488b86c1d0cf724ec,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnTapStamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 114799558136369110, guid: e1323ef11c3de92488b86c1d0cf724ec,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: UFO
+      objectReference: {fileID: 0}
+    - target: {fileID: 114436330124597192, guid: e1323ef11c3de92488b86c1d0cf724ec,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b127c854a7425d54ab5621ca313ec538,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
   m_IsPrefabAsset: 0
@@ -3094,6 +3171,10 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1671733523}
+    - target: {fileID: 1030628242287706, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
   m_IsPrefabAsset: 0
@@ -3446,21 +3527,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 224734755204442328, guid: e1323ef11c3de92488b86c1d0cf724ec,
-        type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.0000015
-      objectReference: {fileID: 0}
-    - target: {fileID: 224734755204442328, guid: e1323ef11c3de92488b86c1d0cf724ec,
-        type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1.0000015
-      objectReference: {fileID: 0}
-    - target: {fileID: 224734755204442328, guid: e1323ef11c3de92488b86c1d0cf724ec,
-        type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.0000015
-      objectReference: {fileID: 0}
     - target: {fileID: 1030628242287706, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
       propertyPath: m_Name
       value: StampSmallButton (1)
@@ -3470,16 +3536,6 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1671733523}
-    - target: {fileID: 114799558136369110, guid: e1323ef11c3de92488b86c1d0cf724ec,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnTapStamp
-      objectReference: {fileID: 0}
-    - target: {fileID: 114799558136369110, guid: e1323ef11c3de92488b86c1d0cf724ec,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: hata
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
   m_IsPrefabAsset: 0

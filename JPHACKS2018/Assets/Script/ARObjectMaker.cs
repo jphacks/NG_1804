@@ -53,6 +53,9 @@ public class ARObjectMaker : MonoBehaviour {
 			case "hata":
 				madeObject = Instantiate (StampPrefab[0], pos, rot, AROBjectParent);
 				break;
+			case "JP":
+				madeObject = Instantiate (StampPrefab[1], pos, rot, AROBjectParent);
+				break;
 			}
 			break;
 		case "picture":
@@ -64,7 +67,7 @@ public class ARObjectMaker : MonoBehaviour {
 					madeObject.GetComponent<VideoPlayer> ().Play ();
 					Debug.Log ("Movie is Played");
 				} else {
-					madeObject = Instantiate (PicturePrefab, pos, rot, AROBjectParent);
+					madeObject = Instantiate (PicturePrefab, pos + 0.7f * (Camera.main.transform.rotation * Vector3.forward), rot, AROBjectParent);
 					MeshRenderer output = madeObject.GetComponent<MeshRenderer> ();
 					StartCoroutine (SetPicture (spid, output));
 				}
