@@ -13,6 +13,7 @@ namespace SocialConnector
 
     public class UnityiOSScreenCapture : MonoBehaviour
     {
+        /*
 
         //追加
         string imagePath
@@ -21,7 +22,7 @@ namespace SocialConnector
             {
                 return Application.persistentDataPath + "/image.png";
             }
-        }
+        }*/
 
 
         //キャンバスグループを作る
@@ -205,7 +206,7 @@ namespace SocialConnector
 
             var shareText = "Unityからツイートするテスト";
             var shareUrl = "https://twitter.com/shiro_nobi_nobi";
-            //var imagePath = Application.persistentDataPath + "/image.png";
+            var imagePath = Application.persistentDataPath + "/image.png";
             //shiro変更
             SocialConnector.Share(shareText, shareUrl,imagePath);
 }
