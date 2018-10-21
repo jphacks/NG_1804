@@ -53,6 +53,21 @@ public class ARObjectMaker : MonoBehaviour {
 			case "hata":
 				madeObject = Instantiate (StampPrefab[0], pos, rot, AROBjectParent);
 				break;
+			case "JP":
+				madeObject = Instantiate (StampPrefab[1], pos, rot, AROBjectParent);
+				break;
+			case "UFO":
+				madeObject = Instantiate (StampPrefab[2], pos, rot, AROBjectParent);
+				break;
+			case "fish1":
+				madeObject = Instantiate (StampPrefab[3], pos, rot, AROBjectParent);
+				break;
+			case "fish2":
+				madeObject = Instantiate (StampPrefab[4], pos, rot, AROBjectParent);
+				break;
+			case "fish3":
+				madeObject = Instantiate (StampPrefab[5], pos, rot, AROBjectParent);
+				break;
 			}
 			break;
 		case "picture":
