@@ -523,7 +523,28 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1030628242287706, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114436330124597192, guid: e1323ef11c3de92488b86c1d0cf724ec,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 648028c09a9dbb348840ee7358b51025,
+        type: 3}
+    - target: {fileID: 114799558136369110, guid: e1323ef11c3de92488b86c1d0cf724ec,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1671733523}
+    - target: {fileID: 114799558136369110, guid: e1323ef11c3de92488b86c1d0cf724ec,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnTapStamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 114799558136369110, guid: e1323ef11c3de92488b86c1d0cf724ec,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: fish3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
@@ -894,7 +915,28 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1030628242287706, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114436330124597192, guid: e1323ef11c3de92488b86c1d0cf724ec,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f6f985f8693f6f74bbf7e74b603848d6,
+        type: 3}
+    - target: {fileID: 114799558136369110, guid: e1323ef11c3de92488b86c1d0cf724ec,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1671733523}
+    - target: {fileID: 114799558136369110, guid: e1323ef11c3de92488b86c1d0cf724ec,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnTapStamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 114799558136369110, guid: e1323ef11c3de92488b86c1d0cf724ec,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: fish2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
@@ -1259,7 +1301,7 @@ Prefab:
     - target: {fileID: 114323788735094346, guid: cc982a72b8b8b44bdac781ee689bb2fe,
         type: 2}
       propertyPath: StampPrefab.Array.size
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4648485704238306, guid: cc982a72b8b8b44bdac781ee689bb2fe, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1334,6 +1376,21 @@ Prefab:
       propertyPath: StampPrefab.Array.data[2]
       value: 
       objectReference: {fileID: 100006, guid: 80a77ff936cc52744b24ca07e4ebd6ae, type: 3}
+    - target: {fileID: 114323788735094346, guid: cc982a72b8b8b44bdac781ee689bb2fe,
+        type: 2}
+      propertyPath: StampPrefab.Array.data[3]
+      value: 
+      objectReference: {fileID: 100000, guid: e7be1608499ae9a418543f9f6be47b6e, type: 3}
+    - target: {fileID: 114323788735094346, guid: cc982a72b8b8b44bdac781ee689bb2fe,
+        type: 2}
+      propertyPath: StampPrefab.Array.data[4]
+      value: 
+      objectReference: {fileID: 100000, guid: a4151332cdfb5ba439ecb48a022538ad, type: 3}
+    - target: {fileID: 114323788735094346, guid: cc982a72b8b8b44bdac781ee689bb2fe,
+        type: 2}
+      propertyPath: StampPrefab.Array.data[5]
+      value: 
+      objectReference: {fileID: 100000, guid: e9cffd5d2ca317543aec579687981858, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc982a72b8b8b44bdac781ee689bb2fe, type: 2}
   m_IsPrefabAsset: 0
@@ -2166,7 +2223,28 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1030628242287706, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114436330124597192, guid: e1323ef11c3de92488b86c1d0cf724ec,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c4fdfbb5e08821c41ab5facec1b07cc7,
+        type: 3}
+    - target: {fileID: 114799558136369110, guid: e1323ef11c3de92488b86c1d0cf724ec,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1671733523}
+    - target: {fileID: 114799558136369110, guid: e1323ef11c3de92488b86c1d0cf724ec,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnTapStamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 114799558136369110, guid: e1323ef11c3de92488b86c1d0cf724ec,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: fish1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1323ef11c3de92488b86c1d0cf724ec, type: 2}
