@@ -1391,6 +1391,11 @@ Prefab:
       propertyPath: StampPrefab.Array.data[5]
       value: 
       objectReference: {fileID: 100000, guid: e9cffd5d2ca317543aec579687981858, type: 3}
+    - target: {fileID: 114174799174976992, guid: cc982a72b8b8b44bdac781ee689bb2fe,
+        type: 2}
+      propertyPath: LU
+      value: 
+      objectReference: {fileID: 450872513}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc982a72b8b8b44bdac781ee689bb2fe, type: 2}
   m_IsPrefabAsset: 0
@@ -1418,6 +1423,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imagePicker: {fileID: 354593047}
   AROM: {fileID: 450872509}
+--- !u!114 &450872513 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114695183800119292, guid: cc982a72b8b8b44bdac781ee689bb2fe,
+    type: 2}
+  m_PrefabInternal: {fileID: 450872508}
+  m_Script: {fileID: 11500000, guid: c25e33c882a1a40389f3d13b80c309fb, type: 3}
 --- !u!1 &478524888
 GameObject:
   m_ObjectHideFlags: 0

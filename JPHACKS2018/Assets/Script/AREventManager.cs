@@ -22,7 +22,7 @@ public class AREventManager : MonoBehaviour {
 	public ARWorldMappingStatus lastStatus;
 	public void OnFrameUpdate(UnityARCamera cam){
 		ARWorldMappingStatus status = cam.worldMappingStatus;
-		if (lastStatus != status && status == ARWorldMappingStatus.ARWorldMappingStatusMapped) {
+		if (lastStatus != status && status == ARWorldMappingStatus.ARWorldMappingStatusMapped && GM.hasStarted) {
 			Save ();
 		}
 		lastStatus = status;

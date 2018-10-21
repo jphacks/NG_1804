@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour {
 	public Dictionary<string, string> dicIDs = new Dictionary<string, string>();
 	public bool hasStarted = false;
 	GameState state = GameState.Idle;
+	public LocationUpdater LU;
 
 	// Use this for initialization
 	void Start () {
@@ -54,11 +55,22 @@ public class GameManager : MonoBehaviour {
 	}
 
 	IEnumerator DataLoadCoroutine(){
+		Debug.Log ("DataLoadStart");
+		while (LU.Location.latitude == 0) {
+			Debug.Log (LU.Location.latitude);
+			yield return new WaitForSeconds (0.5f);
+		}
 			//QueryTestを検索するクラスを作成
 			NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject> ("ARData");
 			//Scoreの値が7と一致するオブジェクト検索
-			query.OrderByDescending("updateDate");
-			query.Limit = 1;
+			//query.OrderByDescending("updateDate");
+		//in nagoya test
+		//NCMBGeoPoint geo = new NCMBGeoPoint (35.1522, 136.9525);
+		NCMBGeoPoint geo = new NCMBGeoPoint (LU.Location.latitude, LU.Location.longitude);
+		Debug.Log ("lat" + LU.Location.latitude);
+		Debug.Log ("lat" + LU.Location.longitude);
+		query.WhereGeoPointWithinKilometers ("point", geo, 10);
+			//query.Limit = 1;
 			query.FindAsync ((List<NCMBObject> objList ,NCMBException e) => {
 				if (e != null) {
 					//検索失敗時の処理
@@ -66,6 +78,7 @@ public class GameManager : MonoBehaviour {
 					Debug.Log(e.ErrorMessage);
 				} else {
 					//検索成功
+				Debug.Log("Success Find count:"+objList.Count);
 					ArrayList worldmapArray = (ArrayList) objList[0]["worldmap"];
 					byte[] byteArray = ArrayListToBytes(worldmapArray);
 					Debug.Log("Loading worldmap");
