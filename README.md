@@ -50,7 +50,7 @@ NiftyCloudMobileBackend
 
 #### デバイス
 iPhone
-Line Clova
+
 
 
 ### 研究内容・事前開発プロダクト（任意）
