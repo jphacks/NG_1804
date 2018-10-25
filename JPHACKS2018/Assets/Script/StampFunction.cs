@@ -33,11 +33,22 @@ namespace Kakera
             };
             */
         }
-			
+
         //スタンプを送れるモードにする
+        //スタンプが表示されているかどうかを読み取る関数を追加
+        private bool mode;
         public void StampButton()
         {
-            Scroll.SetActive(true);
+            //スタンプの表示非表示
+            mode = Scroll.activeSelf;
+            if (mode == false)
+            {
+                Scroll.SetActive(true);
+            }
+            if (mode == true)
+            {
+                Scroll.SetActive(false);
+            }
         }
         //個々のスタンプ
         public void OnTapStamp(string id)
