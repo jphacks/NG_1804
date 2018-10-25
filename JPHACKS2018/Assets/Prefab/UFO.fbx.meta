@@ -3,29 +3,24 @@ guid: 80a77ff936cc52744b24ca07e4ebd6ae
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Camera
-    100002: Lamp
-    100004: Torus.002
-    100006: //RootNode
-    100008: "\u5186"
-    100010: "\u5186\u67F1"
-    100012: "\u7403"
-    100014: "\u7403.001"
-    100016: "\u7403.002"
-    100018: "\u7403.003"
-    100020: "\u7403.004"
-    400000: Camera
-    400002: Lamp
-    400004: Torus.002
-    400006: //RootNode
-    400008: "\u5186"
-    400010: "\u5186\u67F1"
-    400012: "\u7403"
-    400014: "\u7403.001"
-    400016: "\u7403.002"
-    400018: "\u7403.003"
-    400020: "\u7403.004"
-    2000000: Camera
+    100000: Torus.002
+    100002: //RootNode
+    100004: "\u5186"
+    100006: "\u5186\u67F1"
+    100008: "\u7403"
+    100010: "\u7403.001"
+    100012: "\u7403.002"
+    100014: "\u7403.003"
+    100016: "\u7403.004"
+    400000: Torus.002
+    400002: //RootNode
+    400004: "\u5186"
+    400006: "\u5186\u67F1"
+    400008: "\u7403"
+    400010: "\u7403.001"
+    400012: "\u7403.002"
+    400014: "\u7403.003"
+    400016: "\u7403.004"
     2100000: "\u30DE\u30C6\u30EA\u30A2\u30EB.002"
     2100002: "\u30DE\u30C6\u30EA\u30A2\u30EB.003"
     2100004: "\u30DE\u30C6\u30EA\u30A2\u30EB.001"
@@ -55,7 +50,6 @@ ModelImporter:
     4300010: "\u5186\u67F1"
     4300012: Torus.002
     4300014: "\u7403"
-    10800000: Lamp
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
@@ -88,7 +82,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.05
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
