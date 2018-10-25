@@ -1375,7 +1375,7 @@ Prefab:
         type: 2}
       propertyPath: StampPrefab.Array.data[2]
       value: 
-      objectReference: {fileID: 100006, guid: 80a77ff936cc52744b24ca07e4ebd6ae, type: 3}
+      objectReference: {fileID: 100002, guid: 80a77ff936cc52744b24ca07e4ebd6ae, type: 3}
     - target: {fileID: 114323788735094346, guid: cc982a72b8b8b44bdac781ee689bb2fe,
         type: 2}
       propertyPath: StampPrefab.Array.data[3]
